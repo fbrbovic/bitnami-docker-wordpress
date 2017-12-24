@@ -14,7 +14,7 @@ fi
 if ! grep -q ioncube /bitnami/php/conf/php.ini; then
     # install
     # after install add ioncube
-    echo "zend_extension = /opt/bitnami/php/lib/php/extensions/ioncube_loader_lin_7.0.so" >> /bitnami/php/conf/php.ini
+    echo -e "zend_extension = /opt/bitnami/php/lib/php/extensions/ioncube_loader_lin_7.0.so\n$(cat /bitnami/php/conf/php.ini)" > /bitnami/php/conf/php.ini
 fi
 
 
