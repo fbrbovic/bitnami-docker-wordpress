@@ -9,7 +9,7 @@ RUN bitnami-pkg unpack mysql-client-10.1.29-0 --checksum 4b29436697f5fcdf38f3c97
 RUN bitnami-pkg install libphp-7.0.26-0 --checksum d797c28ea51a77aa19707f3594176057f26a888d4fc6254db752433739cf974f
 RUN bitnami-pkg unpack wordpress-4.9.1-0 --checksum 3af773d4c8566190d9d933145452a9815193103db04b17d8379968b8243d94bf
 
-RUN apt-get update && upt-get install wget
+RUN apt-get update && apt-get -y install wget
 
 RUN wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz && \
     tar xvzf ioncube_loaders_lin_x86-64.tar.gz && \
