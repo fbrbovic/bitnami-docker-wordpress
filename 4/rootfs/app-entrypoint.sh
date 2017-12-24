@@ -11,16 +11,11 @@ if [[ "$1" == "nami" && "$2" == "start" ]] || [[ "$1" == "/init.sh" ]]; then
   info "Starting wordpress... "
 fi
 
-if grep -Fxq "ioncube" /bitnami/php/conf/php.ini
-then
-    # do nothing
-else
+if ![[ grep -Fxq "ioncube" /bitnami/php/conf/php.ini ]]
     # install
     # after install add ioncube
-    echo "zend_extension = /opt/bitnami/php/lib/php/extensions/ioncube_loader_lin_5.4.so" \
-            >> /bitnami/php/conf/php.ini
+    echo "zend_extension = /opt/bitnami/php/lib/php/extensions/ioncube_loader_lin_5.4.so" >> /bitnami/php/conf/php.ini
 fi
-
 
 
 exec tini -- "$@"
