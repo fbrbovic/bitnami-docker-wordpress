@@ -11,8 +11,8 @@ RUN bitnami-pkg unpack wordpress-4.9.1-0 --checksum 3af773d4c8566190d9d933145452
 
 RUN apt-get update && upt-get install wget
 
-RUN wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz &&
-    tar xvzf ioncube_loaders_lin_x86-64.tar.gz &&
+RUN wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz && \
+    tar xvzf ioncube_loaders_lin_x86-64.tar.gz && \
     sudo cp ioncube/ioncube_loader_lin_7.0.so /opt/bitnami/php/lib/php/extensions/ 
 
 COPY rootfs /
